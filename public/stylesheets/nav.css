@@ -1,0 +1,67 @@
+.nav-menu-a {
+    float: right;
+    margin-top: 20px;
+    margin-right: 5%;
+}
+
+.nav-menu-about {
+    margin-top: 20px;
+    margin-right: 5%;
+    float: right;
+}
+
+nav {
+    background-color: transparent;
+    position: relative;
+}
+
+.nav-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu li+li {
+    margin-right: 12px;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.nav-menu a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 4px;
+    left: 0;
+    background-color: #18d26e;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before,
+.nav-menu li:hover>a:before,
+.nav-menu .active>a:before {
+    visibility: visible;
+    width: 52px;
+}
+
+.nav-menu a:hover,
+.nav-menu .active>a,
+.nav-menu li:hover>a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,121 @@
+<%- include('partials/header'); %>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>
+        <%- title %> - Kanishk Sachdeva</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg nav-menu nav-menu-about">
+            <div class="container">
+                <button class="navbar-toggler ms-auto bg-dark navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
+                    <div class="navbar-nav navbar-right">
+                        <li><a class="nav-link" href="/">Home&nbsp;</a></li>
+                        <li><a class="nav-link" href="about">About</a></li>
+                        <li><a class="nav-link" href="resume">Resume</a></li>
+                        <li><a class="nav-link" href="projects">Projects</a></li>
+                        <li><a class="nav-link" href="services">Services</a></li>
+                        <li class="active"><a class="nav-link" href="contact">Contact</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Contact Me</p>
+                </div>
+
+
+                <%if (isform) { %>
+                    <div class="alert alert-success" role="alert">
+                        Thanks for contacting <b>Kanishk Sachdeva</b>, i will get in <b>contact</b> with you ASAP.
+                    </div>
+                    <% } %>
+                        <div class="row mt-2">
+
+                            <div class="col-md-6 d-flex align-items-stretch">
+                                <div class="info-box">
+                                    <i class="bx bx-map"></i>
+                                    <h3>My Address</h3>
+                                    <p>33 Dolobram Tr, Brampton</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                                <div class="info-box">
+                                    <i class="bx bx-share-alt"></i>
+                                    <h3>Social Profiles</h3>
+                                    <div class="social-links" style="text-decoration: none;">
+                                        <a href="https://twitter.com/kanu00047" class="twitter"><i class="icofont-twitter"></i></a>
+                                        <a href="https://www.facebook.com/kanu.ks37/" class="facebook"><i class="icofont-facebook"></i></a>
+                                        <a href="https://instagram.com/kanu00047" class="instagram"><i class="icofont-instagram"></i></a>
+                                        <a href="https://github.com/kskanu2020" class="github"><i class="icofont-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/kanishk-sachdeva/" class="linkedin"><i class="icofont-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                                <div class="info-box">
+                                    <i class="bx bx-envelope"></i>
+                                    <h3>Email Me</h3>
+                                    <p>ksachde7@my.centennialcollege.ca</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                                <div class="info-box">
+                                    <i class="bx bx-phone-call"></i>
+                                    <h3>Call Me</h3>
+                                    <p>+1 (647) 784-7008</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="/contact" role="form" class="php-email-form mt-4">
+                            <div class="form-row row">
+                                <div class="col-md-6 form-group col">
+                                    <input type="text" required name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="col-md-6 form-group col">
+                                    <input type="email" required class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" required name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+
+            </div>
+            <!-- </section> -->
+            <!-- End Contact Section -->
+
+
+
+
+
+            <%- include( 'partials/footer'); %>
