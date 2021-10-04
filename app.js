@@ -1,3 +1,8 @@
+/* File name - app.js, 
+            Student’s Name - Sofia Mehta, 
+            StudentID - 301171210, 
+            Date  3rd October 2021*/
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,7 +13,7 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
 var app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
