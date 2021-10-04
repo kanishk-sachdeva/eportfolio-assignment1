@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "engines": {
+    "node": "16.9.1",
+    "npm": "^7.23.0"
+  },
   "dependencies": {
     "bootstrap": "^5.1.1",
     "cookie-parser": "~1.4.4",
@@ -14,5 +18,18 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.13"
-  }
+  },
+  "description": "My portfolio",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kskanu2020/eportfolio-assignment1.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kskanu2020/eportfolio-assignment1/issues"
+  },
+  "homepage": "https://github.com/kskanu2020/eportfolio-assignment1#readme"
 }
