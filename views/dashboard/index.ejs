@@ -1,0 +1,129 @@
+<%- include( 'partials/header'); %>
+
+<body>
+
+    <header>
+        <%- include( 'partials/navbar'); %>
+    </header>
+
+
+    <main>
+
+        <div id="updateForm" class="container form-box" style="display: none;">
+
+            <form method="post" action="/addcontact">
+
+                <fieldset>
+                    <legend class="m-2"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 28px; font-weight: 900;">
+                        Add Contact</legend>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                            value="<%= typeof name != 'undefined' ? name : '' %>" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Phone" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="Phone" name="Phone"
+                            value="<%= typeof Phone != 'undefined' ? Phone : '' %>" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="<%= typeof email != 'undefined' ? email : '' %>" />
+                    </div>
+
+
+
+                    <button type="submit" style="width: 100%;" class="btn btn-warning mb-2">Submit</button>
+                </fieldset>
+            </form>
+
+        </div>
+
+        <div class="container mt-3" style="overflow-x: scroll; padding-left: 5px; padding-right: 5x;">
+
+            <div style="display: flex; justify-content: flex-end; " class="mb-3">
+
+                <button type="button" id="addNewContact" class="btn btn-warning">Add a new contact</button>
+                <form method="post" action="/logout"><button type="submit" style="margin-left: 10px;" id="logoutBtn" class="btn btn-danger">Logout</button></form>
+                
+
+            </div>
+
+
+
+            <table class="table table-hover" style="background-color: rgba(14, 11, 11, 0.541);">
+
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+
+                <tbody class="gfg">
+                    <% var i = 0; %>
+                    <% contacts.forEach(user => { %>
+                    <tr>
+                        <% i++; %>
+                        <th scope="row"><%= i %></th>
+                        <td><%= user.name %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.email %></td>
+                        <td>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a href="/update/<%= user._id %>" class="btn btn-primary btn-sm" type="button">Update</a>
+                                <a href="/delete/<%= user._id %>" class="btn btn-danger btn-sm" type="button">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </main>
+
+    <footer class="d-flex p-1 flex-wrap justify-content-between align-items-center border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2021 KanishkSachdeva.com</p>
+
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" fill="#aaaaaa" class="bi bi-house-fill"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                <path fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg>
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="about" class="nav-link px-2 text-muted">About</a></li>
+            <!-- <li class="nav-item"><a href="resume" class="nav-link px-2 text-muted">Resume</a></li> -->
+            <li class="nav-item"><a href="projects" class="nav-link px-2 text-muted">Projects</a></li>
+            <li class="nav-item"><a href="services" class="nav-link px-2 text-muted">Services</a></li>
+            <li class="nav-item"><a href="contact" class="nav-link px-2 text-muted">Contact</a></li>
+        </ul>
+    </footer>
+
+
+
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+    <script src="/javascripts/dashboard.js"></script>
+</body>
+
+</html>
