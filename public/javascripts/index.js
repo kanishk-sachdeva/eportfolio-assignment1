@@ -1,4 +1,4 @@
-var text = ["Web designer", "Full Stack developer", "Android developer"];
+var text = ["Full Stack developer", "Mobile developer","Software Developer", "Wordpress Developer"];
 var counter = 0;
 var elem = document.getElementById("changeText");
 var inst = setInterval(change, 3000);
