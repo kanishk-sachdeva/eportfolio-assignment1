@@ -1,18 +1,21 @@
 <%- include('partials/header'); %>
-    <title>
-        <%- title %> - Kanishk Sachdeva</title>
+  <title>
+    <%- title %> - Kanishk Sachdeva
+  </title>
 
-    </head>
+  </head>
 
-    <body>
+  <body>
 
-        <nav class="navbar navbar-expand-lg nav-menu nav-menu-about">
-            <div class="container">
-                <button class="navbar-toggler ms-auto bg-dark navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+    <nav class="navbar navbar-expand-lg nav-menu nav-menu-about">
+            <div class="container-fluid">
+                <button class="navbar-toggler ms-auto bg-dark navbar-dark" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
-                    <div class="navbar-nav navbar-right">
+                    <ul class="navbar-nav navbar-right">
                         <li><a class="nav-link" href="/">Home&nbsp;</a></li>
                         <li><a class="nav-link" href="../about">About</a></li>
                         <li><a class="nav-link" href="../resume">Resume</a></li>
@@ -20,40 +23,69 @@
                         <li><a class="nav-link" href="../services">Services</a></li>
                         <li><a class="nav-link" href="../contact">Contact</a></li>
                         <li><a class="nav-link" href="../dashboard">Dashboard</a></li>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </nav>
 
 
+    <section id="projects" class="projects">
+      <style>
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          margin-bottom: 5px;
+        }
+        h6 > a {
+          color: white;
+        } 
+        h6>a:hover {
+          color: blue;
+        }
+        li > h6 {
+          color: #18d26e;
+        }
+      </style>
 
-        <section id="projects" class="projects">
+      <!-- ======= About Me ======= -->
+      <div class="container">
 
-            <!-- ======= About Me ======= -->
-            <div class="container">
+        <div class="section-title mb-3">
+          <h2>About Project</h2>
+          <p>
+            <%= project.title %>
+          </p>
+          <h6 class="font-italic"><%= project.description %></h6>
+        </div>
 
-                <div class="section-title">
-                    <h2>About Project</h2>
-                    <p>
-                        <%- project.title %>
-                    </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <img src="<%- project.imagelink %>" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <h3 style="color: #18d26e; font-weight: 700;
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="<%= project.imagelink %>" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3 style="color: #18d26e; font-weight: 700;
                         font-size: 26px;">Project Introduction</h3>
-                        <p class="font-italic">
-                            <%- project.content %>
-                        </p>
-                    </div>
-                </div>
+            <p class="font-italic">
+              <%- project.intro %>
+              <ul>
+                <% project.data.forEach((element) => { %>
+                  <%- element %>
+                <% }); %>
+              </ul>
 
-            </div>
-            <!-- End About Me -->
+              <!-- <img src="https://github-readme-stats.vercel.app/api/pin/?username=kanishk-sachdeva&repo=AzagoMovies"/> -->
+              
+            </p>
+          </div>
+        </div>
+
+        <iframe class="bg-dark mt-5" src="<%= project.githublink %>" width="100%" height="900px"></iframe>
+
+      </div>
+      <!-- End About Me -->
 
 
-            <%- include( 'partials/footer'); %>
+      <%- include( 'partials/footer' ); %>

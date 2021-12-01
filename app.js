@@ -23,7 +23,6 @@ var usersRouter = require('./routes/users');
 var app = express();
 const port = 3000;
 
-
 const { User } = require('./models/User');
 
 // MongoDb setup
@@ -43,6 +42,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+var reload = require('reload');
+app.listen(3000, () => {
+  console.log(`Listening on port 3000`);
+})
+reload(app);
 
 // Passport Session holder
 app.use(session({

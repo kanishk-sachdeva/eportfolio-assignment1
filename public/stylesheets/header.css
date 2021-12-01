@@ -2,16 +2,30 @@
 # Header
 --------------------------------------------------------------*/
 
+.index {
+    height: 100vh;
+    display: block;
+}
+
 #header {
     transition: ease-in-out 0.3s;
     position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    z-index: 997;
-    margin-left: 15%;
-    overflow-y: auto;
+    top: 20px;
+    background: transparent;
+    /* bottom: 50%; */
+    /* align-items: center; */
+    overflow: hidden;
+    opacity: 1;
 }
+
+.container1 {
+    padding: 10%;
+}
+/* #header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 
 #header * {
     transition: ease-in-out 0.3s;

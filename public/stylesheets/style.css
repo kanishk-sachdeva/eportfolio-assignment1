@@ -145,7 +145,7 @@ section .container {
 
 .section-title p {
     margin: 0;
-    margin: -15px 0 15px 0;
+    /* margin: -15px 0 15px 0; */
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
